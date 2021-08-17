@@ -22,7 +22,9 @@ const MainMenu: FC = () => {
 
     return (
         <NavigationContainer>
-            {user != null ? <AppStack /> : <StackAuth />}
+            <AppStack/>
+            {//user != null ? <AppStack /> : <StackAuth />}
+            }
         </NavigationContainer>
     )
 }
