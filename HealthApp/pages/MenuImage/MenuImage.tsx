@@ -14,7 +14,7 @@ const App: FC = (props) => {
       <Image
         onPress={() => DrawerActions.DrawerActions.openDrawer}
         style={styles.headerButtonImage}
-        source={require("../Images/menu.png")}
+        //source={require("../Images/menu.png")}
       />
     </TouchableOpacity>
   );

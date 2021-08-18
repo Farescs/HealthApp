@@ -15,15 +15,9 @@ const App: FC = (props) => {
     headerLeft: () => <MenuImage onPress={() => DrawerActions.DrawerActions.openDrawer} />
   });
 
-  const makeAppointment = ({ item }) => (
-      <View>
-        <Button title="Setup an appointment" onPress={() => navigator}></Button>
-      </View>
-  );
-
   return (
     <View>
-      renderItem={makeAppointment}
+        <Button title="Setup an appointment" onPress={() => navigator}></Button>
     </View>
   );
 }
