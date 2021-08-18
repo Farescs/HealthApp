@@ -1,21 +1,23 @@
 import React from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, Dimensions } from 'react-native';
+import { FC } from "react";
 import PropTypes from 'prop-types';
 import styles from './styles'
+import DrawerActions from '@react-navigation/core';
 
-export default class MenuImage extends React.Component {
-  render() {
-    return (
-      <TouchableOpacity style={styles.headerButtonContainer} onPress={this.props.onPress}>
-        <Image
-          style={styles.headerButtonImage}
-          source={require('../../../images/menu.png')}
-        />
-      </TouchableOpacity>
-    );
-  }
+const { width, height } = Dimensions.get('screen');
+
+const App: FC = (props) => {
+
+  return (
+    <TouchableOpacity style={styles.headerButtonContainer} >
+      <Image
+        onPress={() => DrawerActions.DrawerActions.openDrawer}
+        style={styles.headerButtonImage}
+        source={require("../Images/menu.png")}
+      />
+    </TouchableOpacity>
+  );
 }
 
-MenuImage.propTypes = {
-  onPress: PropTypes.func
-};
+export default App;

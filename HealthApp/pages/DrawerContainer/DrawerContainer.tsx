@@ -1,31 +1,30 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Dimensions } from 'react-native';
+import { FC } from "react";
 import PropTypes from 'prop-types';
 import styles from './styles';
 import MenuButton from '../../component/MenuButton/MenuButton';
+import { DrawerActions } from '@react-navigation/native';
 
-export default class DrawerContainer extends React.Component {
-  render() {
-    const { navigation } = this.props;
+const { width, height } = Dimensions.get('screen');
+
+const App: FC = (props) => {
+    const navigation = props;
     return (
       <View style={styles.content}>
         <View style={styles.container}>
-          <MenuButton
+          <MenuButton 
             title="HOME"
-            source={require('../../../images/home.png')}
+            source={require("../../images/home.png")}
             onPress={() => {
               navigation.navigate('Home');
-              navigation.closeDrawer();
+              DrawerActions.closeDrawer();
             }}
           />
         </View>
       </View>
     );
-  }
+  
 }
 
-DrawerContainer.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired
-  })
-};
+export default App;

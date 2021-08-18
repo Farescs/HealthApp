@@ -1,40 +1,30 @@
 import React from 'react';
-import { FlatList, ScrollView, Text, View, TouchableHighlight, Image } from 'react-native';
+import { FC } from "react";
+import { FlatList, ScrollView, Text, View, TouchableHighlight, Image, Dimensions } from 'react-native';
 import styles from './styles';
 import MenuImage from '../MenuImage/MenuImage';
 import DrawerActions from '@react-navigation/core';
+import { Button } from '../../component';
 
-export default class HomeScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
+const { width, height } = Dimensions.get('screen');
+
+const App: FC = (props) => {
+
+  const navigationOptions = ({ navigation }) => ({
     title: 'Home',
-    headerLeft: () => <MenuImage 
-      onPress={() => {
-        navigation.openDrawer();
-      }}
-    />
+    headerLeft: () => <MenuImage onPress={() => DrawerActions.DrawerActions.openDrawer} />
   });
 
-  constructor(props) {
-    super(props);
-  }
-
-  onPressAppointment = item => {
-    
-  };
-
-  makeAppointment = ({ item }) => (
-    <TouchableHighlight underlayColor='rgba(73,182,77,0.9)' onPress={() => this.onPressAppointment(item)}>
+  const makeAppointment = ({ item }) => (
       <View>
-        <Text>Setup an appointment</Text>
+        <Button title="Setup an appointment" onPress={() => navigator}></Button>
       </View>
-    </TouchableHighlight>
   );
 
-  render() {
-    return (
-      <View>
-        renderItem={this.makeAppointment}
-      </View>
-    );
-  }
+  return (
+    <View>
+      renderItem={makeAppointment}
+    </View>
+  );
 }
+export default App;
