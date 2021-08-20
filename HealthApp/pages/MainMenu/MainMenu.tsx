@@ -5,8 +5,7 @@ import styles from './styles';
 import MenuImage from '../MenuImage/MenuImage';
 import DrawerActions from '@react-navigation/core';
 import { Button } from '../../component';
-
-const { width, height } = Dimensions.get('screen');
+import { Link } from '@react-navigation/native';
 
 const App: FC = (props) => {
 
@@ -16,8 +15,8 @@ const App: FC = (props) => {
   });
 
   return (
-    <View>
-        <Button title="Setup an appointment" onPress={() => navigator}></Button>
+    <View style={styles.container}>
+        <Button title="Make an appointment" onPress={() => <Link to={"../../pages/list_page.tsx"}>.</Link>}></Button>
     </View>
   );
 }

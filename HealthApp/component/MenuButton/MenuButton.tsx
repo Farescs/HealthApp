@@ -5,8 +5,6 @@ import styles from './styles';
 import { FC } from "react";
 import { TouchableOpacity } from "react-native";
 
-const { width, height } = Dimensions.get('screen');
-
 interface Props {
   title: string;
   source: string;

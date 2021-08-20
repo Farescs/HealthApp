@@ -17,7 +17,7 @@ const App: FC = (props) => {
             title="HOME"
             source={require("../../images/home.png")}
             onPress={() => {
-              navigation.navigate('Home');
+              navigation.navigate('MainMenu');
               DrawerActions.closeDrawer();
             }}
           />
