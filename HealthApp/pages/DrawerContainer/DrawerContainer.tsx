@@ -1,12 +1,9 @@
 import React from 'react';
-import { View, Dimensions } from 'react-native';
+import { View } from 'react-native';
 import { FC } from "react";
-import PropTypes from 'prop-types';
 import styles from './styles';
 import MenuButton from '../../component/MenuButton/MenuButton';
 import { DrawerActions } from '@react-navigation/native';
-
-const { width, height } = Dimensions.get('screen');
 
 const App: FC = (props) => {
     const navigation = props;
@@ -17,7 +14,7 @@ const App: FC = (props) => {
             title="HOME"
             source={require("../../images/home.png")}
             onPress={() => {
-              navigation.navigate('MainMenu');
+              props.navigation.navigate('MainMenu');
               DrawerActions.closeDrawer();
             }}
           />

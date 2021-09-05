@@ -1,18 +1,16 @@
 import React from 'react';
-import { TouchableOpacity, Image, Dimensions } from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
 import { FC } from "react";
-import PropTypes from 'prop-types';
 import styles from './styles'
 import DrawerActions from '@react-navigation/core';
 
 const App: FC = (props) => {
 
   return (
-    <TouchableOpacity style={styles.headerButtonContainer} >
+    <TouchableOpacity style={styles.headerButtonContainer} onPress = {() => DrawerActions.DrawerActions.openDrawer}>
       <Image
-        onPress={() => DrawerActions.DrawerActions.openDrawer}
         style={styles.headerButtonImage}
-        //source={require("../Images/menu.png")}
+        source={require("../Images/menu.png")}
       />
     </TouchableOpacity>
   );
